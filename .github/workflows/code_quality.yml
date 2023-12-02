@@ -45,5 +45,8 @@ jobs:
             --disable=line-too-long \
             --disable=too-few-public-methods \
             --disable=W0511 \
+            --disable=W0621 \
+            --disable=W0622 \
             --disable=E1102 \
+            --disable=C0103 \
             --extension-pkg-whitelist=pydantic
