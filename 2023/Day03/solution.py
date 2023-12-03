@@ -4,6 +4,5 @@
 
 with open("./input.txt", encoding="utf-8") as input_file:
     solution = 0
-    
 
 print(f"The Solution is: {solution}")
