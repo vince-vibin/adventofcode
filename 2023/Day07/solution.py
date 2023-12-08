@@ -1,37 +1,45 @@
 """ https://adventofcode.com/2023/day/7 """
 
-def check_hand(hand):
-    points_per_card = []
-    for card in hand:
-        points_per_card.append([card, hand.count(card)])
-    
-    temp = []
-    temp1 = set(points_per_card)
-    for points in points_per_card:
-        if points not in temp:
-            temp.append(points)
-    points_per_card = temp
-    print(temp1)
-    return points_per_card
+SPECIAL_CARD = {
+    "A": 14,
+    "K": 13,
+    "Q": 12,
+    "J": 11,
+    "T": 10,
+}
 
-def get_points(points_per_card):
-    highest = 0
-    for card in points_per_card:
-        if card[1] > highest:
-            highest = card[1]
-"""             if card[1] = 3:
-                # check for full house """
-                
-        
+def get_card_values(hand):
+    card_values = []
+    for card in hand:
+        if card.isdigit():
+            card_values.append(int(card))
+        else:
+            card_values.append(int(SPECIAL_CARD[card]))
+    return card_values
+
+def count_hand(hand):
+    hand_counted = []
+    for card in hand:
+        hand_counted.append(hand.count(card))
+    return sorted(hand_counted, reverse=True)
+
+def get_total(hands):
+    worth = []
+    for i, (_, bid) in enumerate(hands, start=1):
+        worth.append(i * bid)
+    return sum(worth)
 
 with open("./input.txt", encoding="utf-8") as input_file:
+    hands = []
     for line in input_file:
-        solution = 0
-        hand = line.split(" ")[0]
-        bet = line.split(" ")[1]
+        hand, bid = line.split(" ")
 
-        points_per_card = check_hand(hand)
-        get_points(points_per_card)
+        hand_values = get_card_values(hand)
+        hand_counts = count_hand(hand)
 
+        hands.append([hand_counts + hand_values, int(bid)])
 
+hands.sort()
+
+solution = get_total(hands)
 print(f"The Solution is: {solution}")
