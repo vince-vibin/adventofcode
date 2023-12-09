@@ -8,6 +8,7 @@ SPECIAL_CARD = {
     "T": 10,
 }
 
+
 def get_card_values(hand):
     card_values = []
     for card in hand:
@@ -17,17 +18,20 @@ def get_card_values(hand):
             card_values.append(int(SPECIAL_CARD[card]))
     return card_values
 
+
 def count_hand(hand):
     hand_counted = []
     for card in hand:
         hand_counted.append(hand.count(card))
     return sorted(hand_counted, reverse=True)
 
+
 def get_total(hands):
     worth = []
     for i, (_, bid) in enumerate(hands, start=1):
         worth.append(i * bid)
     return sum(worth)
+
 
 with open("./input.txt", encoding="utf-8") as input_file:
     hands = []

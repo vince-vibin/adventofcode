@@ -1,11 +1,13 @@
 """ https://adventofcode.com/2023/day/6 """
 
+
 def get_lines():
     with open("./input.txt", encoding="utf-8") as input_file:
         lines = []
         for line in input_file:
             lines.append(line)
         return lines
+
 
 def parse_lists(list):
     parsed_list = []
@@ -14,11 +16,13 @@ def parse_lists(list):
             parsed_list.append(int(elem))
     return parsed_list
 
+
 def get_won_multiplied(won):
     multiplied = 1
-    for won in won:
-        multiplied *= won
+    for race in won:
+        multiplied *= race
     return multiplied
+
 
 lines = get_lines()
 

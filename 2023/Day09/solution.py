@@ -2,16 +2,19 @@
 
 solution = []
 
+
 def get_nxt_history(history):
     nxt_history = []
     for i, number in enumerate(history[1:]):
         nxt_history.append(number - history[i])
     return nxt_history
 
+
 def extrapolate(last_elements, first):
     for element in reversed(last_elements):
         first += element
     return first
+
 
 with open("./input.txt", encoding="utf-8") as input_file:
     histories = input_file.readlines()

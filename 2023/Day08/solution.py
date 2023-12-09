@@ -1,6 +1,5 @@
-""" https://adventofcode.com/2023/day/8 """              
+""" https://adventofcode.com/2023/day/8 """
 
-import re
 
 def rm_newline(lines):
     lines = [line.rstrip() for line in lines]
