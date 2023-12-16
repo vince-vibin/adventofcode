@@ -3,9 +3,7 @@
 
 def get_lines():
     with open("./input.txt", encoding="utf-8") as input_file:
-        lines = []
-        for line in input_file:
-            lines.append(line)
+        lines = input_file.readlines()
         return lines
 
 
