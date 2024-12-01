@@ -53,3 +53,8 @@ jobs:
             --disable=R1710 \
             --disable=R0801 \
             --extension-pkg-whitelist=pydantic
+  lint_go:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Golangci-lint
+        uses: golangci/golangci-lint-action@v6.1.1
