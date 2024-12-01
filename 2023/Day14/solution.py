@@ -5,7 +5,7 @@ solution = []
 
 def get_columns(plattform):
     columns = []
-    for i, char in enumerate(plattform[0]):
+    for i, _ in enumerate(plattform[0]):
         column = []
         for row in plattform:
             column.append(row[i])
@@ -36,6 +36,7 @@ def calc_column_score(column):
         if elem == "O":
             score += len(column) - i
     return score
+
 
 with open("./input.txt", encoding="utf-8") as input_file:
     lines = input_file.readlines()

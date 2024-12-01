@@ -51,4 +51,5 @@ jobs:
             --disable=C0103 \
             --disable=R1732 \
             --disable=R1710 \
+            --disable=R0801 \
             --extension-pkg-whitelist=pydantic
