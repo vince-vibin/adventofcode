@@ -2,13 +2,13 @@
 package main
 
 import (
-	"os"
-	"fmt"
 	"bufio"
-	"strings"
-	"strconv"
-	"sort"
 	"errors"
+	"fmt"
+	"os"
+	"sort"
+	"strconv"
+	"strings"
 )
 
 func main() {
@@ -18,14 +18,14 @@ func main() {
 		return
 	}
 
-	day1 := day1(parseInput(input))
-	fmt.Println(day1)
+	part1 := part1(parseInput(input))
+	fmt.Println(part1)
 
-	day2 := day2(parseInput(input))
-	fmt.Println(day2)
+	part2 := part2(parseInput(input))
+	fmt.Println(part2)
 }
 
-func day1(leftColumn []int, rightColumn []int) int {
+func part1(leftColumn []int, rightColumn []int) int {
 	sort.Ints(leftColumn)
 	sort.Ints(rightColumn)
 	distance := 0
@@ -39,7 +39,7 @@ func day1(leftColumn []int, rightColumn []int) int {
 	return distance
 }
 
-func day2(leftColumn []int, rightColumn []int) int {
+func part2(leftColumn []int, rightColumn []int) int {
 	similarityScore := 0
 	for _, num := range leftColumn {
 		occurence := 0
